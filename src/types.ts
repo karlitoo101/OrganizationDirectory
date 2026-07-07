@@ -7,7 +7,7 @@ export interface Organization {
   id: string;
   name: string;
   acronym: string;
-  category: 'Departmental Organizations' | 'University-Wide Organizations' | 'Community-Based (?)';
+  category: 'Departmental Organizations' | 'University-Wide Organizations' | 'Community-Based';
   type: 'Leadership' | 'Academic & Professional' | 'Recreational' | 'Socio-Civic' | 'Fraternity/Sorority';
   fields: ('Engineering & Technology' | 'Cultural & Humanities' | 'Journalism' | 'Arts & Creatives' | 'Varsity & Sports' | 'Public Service' | 'Commerce & Enterprise')[];
   openFor: string;

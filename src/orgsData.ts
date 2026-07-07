@@ -39,8 +39,8 @@ export const FIELDS = [
 export const ORGANIZATIONS: Organization[] = [
   {
     id: 'aws-cloud-club',
-    name: 'AWS Cloud Club - QCU',
-    acronym: 'AWSCC',
+    name: 'AWS Student Builder Group - QCU',
+    acronym: 'AWS SBG',
     category: 'University-Wide Organizations',
     type: 'Academic & Professional',
     fields: ['Engineering & Technology', 'Arts & Creatives'],
