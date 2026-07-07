@@ -59,7 +59,7 @@ export default function Header({
     },
     {
       id: "my-trail" as const,
-      label: "Saved Trail",
+      label: "Saved",
       icon: Bookmark,
       iconColor: "text-pink-500",
       isSaved: true,
@@ -80,13 +80,23 @@ export default function Header({
             className="flex items-center gap-3 shrink-0 cursor-pointer select-none"
             onClick={() => handleNavClick("explore")}
           >
-            <div className="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center text-white font-black text-lg shadow-md border border-blue-900">
-              BK
+            <div className="w-10 h-10 shrink-0 rounded-full overflow-hidden shadow-md border border-blue-900">
+              <img
+                src="/websitePhoto/Website_Logo.PNG"
+                alt="Byaheng Kyusiyu logo"
+                className="h-full w-full object-cover"
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-extrabold text-blue-900 leading-tight uppercase tracking-wider text-[11px] sm:text-xs md:text-sm">
-                <span className="text-sm sm:text-base md:text-lg font-black">B</span>yaheng{' '}
-                <span className="text-sm sm:text-base md:text-lg font-black">K</span>yusiyu
+                <span className="text-sm sm:text-base md:text-lg font-black">
+                  B
+                </span>
+                yaheng{" "}
+                <span className="text-sm sm:text-base md:text-lg font-black">
+                  K
+                </span>
+                yusiyu
               </span>
               <span className="text-[8px] md:text-[9px] text-slate-400 font-bold tracking-widest uppercase">
                 Find Your Community

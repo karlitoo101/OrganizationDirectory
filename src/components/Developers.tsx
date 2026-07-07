@@ -18,6 +18,10 @@ export default function Developers() {
   const devs = [
     {
       name: "Karl Jhon Mangapot",
+      titles: [
+        { role: "Executive Director", org: "DevCamp - QCU" },
+        { role: "Vice-Chief of Relations & Communications", org: "AWS SBG - QCU" },
+      ],
       campus: "San Bartolome (Main)",
       program: "BS in Information Technology (BSIT)",
       avatarBg: "bg-gradient-to-br from-blue-900 to-indigo-950 text-white",
@@ -48,6 +52,10 @@ export default function Developers() {
     },
     {
       name: "Rochele Fernandez",
+      titles: [
+        { role: "Chief of Relations & Communications", org: "AWS SBG - QCU" },
+        { role: "Director of Finance & Budgeting Division", org: "DevCamp - QCU" },
+      ],
       campus: "San Bartolome (Main)",
       program: "BS in Computer Science",
       avatarBg: "bg-gradient-to-br from-teal-600 to-emerald-700 text-white",
@@ -95,7 +103,7 @@ export default function Developers() {
             student organizations. The two developers are the Chief and
             Vice-Chief of the esteemed{" "}
             <strong>AWS Student Builder Group - QCU</strong> as well as the
-            Executive Director and Director of Finance and Budgeting Devision at{" "}
+            Executive Director and Director of Finance and Budgeting Division at{" "}
             <strong>Developer Camp - QCU</strong>.
           </p>
           <div className="flex flex-wrap gap-4 text-xs font-bold text-slate-400 uppercase tracking-wider pr-6">
@@ -133,6 +141,13 @@ export default function Developers() {
                   <h4 className="font-extrabold text-slate-900 text-sm md:text-base leading-tight">
                     {dev.name}
                   </h4>
+                  <div className="mt-1 space-y-0.5">
+                    {dev.titles.map((t, tIdx) => (
+                      <p key={tIdx} className="text-[11px] text-slate-600">
+                        <span className="font-bold text-slate-800">{t.role}</span>, {t.org}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </div>
 

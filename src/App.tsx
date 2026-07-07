@@ -108,22 +108,25 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1">
         {activeTab === 'explore' && (
-          <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8 animate-in fade-in duration-200">
-            {/* Hero Section Banner */}
-            <div className="relative overflow-hidden rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 text-center shadow-xs">
-              <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-blue-900/5 blur-3xl pointer-events-none" />
-              <div className="absolute bottom-0 left-10 h-32 w-32 rounded-full bg-yellow-400/10 blur-2xl pointer-events-none" />
+          <div className="animate-in fade-in duration-200">
+            {/* Hero Section Banner - full-bleed, flush with header */}
+            <div
+              className="relative overflow-hidden bg-cover bg-center text-center flex items-center justify-center min-h-[280px] sm:min-h-[320px] md:min-h-[360px] p-8 sm:p-12"
+              style={{ backgroundImage: "url('/websitePhoto/Header.jpg')" }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-blue-950/85 via-blue-900/70 to-blue-950/85" />
 
               <div className="relative z-10 max-w-3xl mx-auto">
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-905 mb-4 tracking-tight leading-none font-sans">
-                  Find Your Community with <span className="text-blue-900 underline decoration-yellow-400 decoration-3 underline-offset-4 font-black">Byaheng Kyusiyu</span>
+                <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight leading-none font-sans">
+                  Find Your Community with <span className="text-amber-300 underline decoration-white/70 decoration-3 underline-offset-4 font-black">Byaheng Kyusiyu</span>
                 </h1>
-                <p className="text-slate-505 max-w-2xl mx-auto text-xs sm:text-sm leading-relaxed font-sans">
-                  "Byaheng Kyusiyu" represents the exciting travel, exploration, and developmental voyage of student leadership, service, and learning across three campuses: <strong>San Bartolome</strong>, <strong>San Francisco</strong>, and <strong>Batasan Hills</strong>.
+                <p className="text-slate-200 max-w-2xl mx-auto text-xs sm:text-sm leading-relaxed font-sans">
+                  "Byaheng Kyusiyu" represents the exciting travel, exploration, and developmental voyage of student leadership, service, and learning across three campuses: <strong className="text-white">San Bartolome</strong>, <strong className="text-white">San Francisco</strong>, and <strong className="text-white">Batasan Hills</strong>.
                 </p>
               </div>
             </div>
 
+          <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
             {/* Filter and Search Section */}
             <div className="rounded-2xl border border-slate-200 bg-white p-3 md:p-3.5 shadow-sm max-w-7xl mx-auto">
               <div className="grid grid-cols-12 gap-3 items-center">
@@ -251,6 +254,7 @@ export default function App() {
                 </button>
               </div>
             )}
+          </div>
           </div>
         )}
 
