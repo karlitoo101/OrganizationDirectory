@@ -25,6 +25,8 @@ export interface Organization {
   officers: { role: string; name: string }[];
   featuredEvents: { title: string; description: string; date: string }[];
   logoBg: string; // Tailwind class
+  logoImage?: string; // path to an official logo image, takes precedence over the acronym badge
+  logoImageScale?: number; // CSS scale factor to compensate for padding baked into the source logo image
   accentColor: string; // hex or Tailwind color name
 }
 
@@ -35,11 +37,4 @@ export interface QuizQuestion {
     text: string;
     scores: { [key: string]: number }; // Keys are categories (e.g. 'Technology', 'Socio-Civic')
   }[];
-}
-
-export interface ChatMessage {
-  id: string;
-  sender: 'user' | 'bot';
-  text: string;
-  timestamp: string;
 }

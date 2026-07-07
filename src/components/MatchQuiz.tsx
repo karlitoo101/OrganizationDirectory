@@ -113,8 +113,17 @@ export default function MatchQuiz({ onViewOrgDetails, bookmarks, onToggleBookmar
                 onClick={() => onViewOrgDetails(org)}
               >
                 <div className="flex items-center gap-4 min-w-0">
-                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border font-bold font-mono text-sm ${org.logoBg}`}>
-                    {org.acronym}
+                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border font-bold font-mono text-sm ${org.logoBg}`}>
+                    {org.logoImage ? (
+                      <img
+                        src={org.logoImage}
+                        alt={`${org.name} logo`}
+                        className="h-full w-full object-cover"
+                        style={org.logoImageScale ? { transform: `scale(${org.logoImageScale})` } : undefined}
+                      />
+                    ) : (
+                      org.acronym
+                    )}
                   </div>
                   <div className="min-w-0">
                     <span className="inline-flex items-center rounded bg-slate-100 border border-slate-200 px-2.5 py-0.5 text-[10px] font-bold text-slate-700 uppercase">

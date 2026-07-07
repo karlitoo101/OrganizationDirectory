@@ -2,5 +2,5 @@
   "name": "Byaheng Kyusiyu - QCIan Student Organizations Directory",
   "description": "An interactive travel-inspired student organizations directory portal for Quezon City University (QCU) QCIans to navigate, search, block, and match campus clubs.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

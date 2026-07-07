@@ -12,7 +12,7 @@ interface MyTrailProps {
   bookmarks: string[];
   onToggleBookmark: (id: string) => void;
   onViewOrgDetails: (org: Organization) => void;
-  setActiveTab: (tab: 'explore' | 'quiz' | 'counselor' | 'my-trail') => void;
+  setActiveTab: (tab: 'explore' | 'quiz' | 'my-trail') => void;
 }
 
 interface ChecklistState {
@@ -124,8 +124,17 @@ export default function MyTrail({ bookmarks, onToggleBookmark, onViewOrgDetails,
                 <div className="md:w-1/3 shrink-0 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-6">
                   <div>
                     <div className="flex items-center gap-3">
-                      <div className={`flex h-10 w-10 items-center justify-center rounded-xl border font-bold font-mono text-sm ${org.logoBg}`}>
-                        {org.acronym}
+                      <div className={`flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border font-bold font-mono text-sm ${org.logoBg}`}>
+                        {org.logoImage ? (
+                          <img
+                            src={org.logoImage}
+                            alt={`${org.name} logo`}
+                            className="h-full w-full object-cover"
+                            style={org.logoImageScale ? { transform: `scale(${org.logoImageScale})` } : undefined}
+                          />
+                        ) : (
+                          org.acronym
+                        )}
                       </div>
                       <div className="min-w-0">
                         <span className="inline-flex items-center rounded bg-slate-100 border border-slate-200 px-2 py-0.5 text-[9px] font-bold text-slate-600 uppercase">

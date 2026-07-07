@@ -8,16 +8,15 @@ import Header from './components/Header';
 import OrgCard from './components/OrgCard';
 import OrgDetailModal from './components/OrgDetailModal';
 import MatchQuiz from './components/MatchQuiz';
-import AICounselor from './components/AICounselor';
 import MyTrail from './components/MyTrail';
 import Developers from './components/Developers';
 import Contribute from './components/Contribute';
 import { Organization } from './types';
 import { ORGANIZATIONS, CAMPUSES, CATEGORIES, TYPES, FIELDS } from './orgsData';
-import { Search, MapPin, Sparkles, SlidersHorizontal, Compass, GraduationCap, XCircle, ChevronDown, CheckCircle, HelpCircle, RotateCcw } from 'lucide-react';
+import { Search, MapPin, Sparkles, SlidersHorizontal, Compass, XCircle, ChevronDown, CheckCircle, HelpCircle, RotateCcw } from 'lucide-react';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'explore' | 'quiz' | 'counselor' | 'my-trail' | 'developers' | 'contribute'>('explore');
+  const [activeTab, setActiveTab] = useState<'explore' | 'quiz' | 'my-trail' | 'developers' | 'contribute'>('explore');
   const [selectedOrg, setSelectedOrg] = useState<Organization | null>(null);
   
   // Bookmarks state (Org IDs) synchronized to localStorage
@@ -116,12 +115,8 @@ export default function App() {
               <div className="absolute bottom-0 left-10 h-32 w-32 rounded-full bg-yellow-400/10 blur-2xl pointer-events-none" />
 
               <div className="relative z-10 max-w-3xl mx-auto">
-                <div className="flex items-center gap-2 rounded-full bg-blue-50 px-3.5 py-1 text-[10px] font-bold text-blue-900 ring-1 ring-inset ring-blue-200 justify-center inline-flex uppercase tracking-wider mb-4 font-sans">
-                  <GraduationCap className="h-4 w-4 text-blue-900" />
-                  <span>Byaheng Kyusiyu • Student Organizations Portal</span>
-                </div>
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-905 mb-4 tracking-tight leading-none font-sans">
-                  Navigate Your Org Journey with <span className="text-blue-900 underline decoration-yellow-400 decoration-3 underline-offset-4 font-black">Byaheng Kyusiyu</span>
+                  Find Your Community with <span className="text-blue-900 underline decoration-yellow-400 decoration-3 underline-offset-4 font-black">Byaheng Kyusiyu</span>
                 </h1>
                 <p className="text-slate-505 max-w-2xl mx-auto text-xs sm:text-sm leading-relaxed font-sans">
                   "Byaheng Kyusiyu" represents the exciting travel, exploration, and developmental voyage of student leadership, service, and learning across three campuses: <strong>San Bartolome</strong>, <strong>San Francisco</strong>, and <strong>Batasan Hills</strong>.
@@ -295,14 +290,6 @@ export default function App() {
         onClose={() => setSelectedOrg(null)}
         isBookmarked={selectedOrg ? bookmarks.includes(selectedOrg.id) : false}
         onToggleBookmark={(id) => handleToggleBookmark(id)}
-      />
-
-      {/* Floating AI Advisor Chat Bubble */}
-      <AICounselor
-        onSearchQuery={(q) => {
-          setSearch(q);
-          setActiveTab('explore');
-        }}
       />
 
       {/* University Geometric Footer */}

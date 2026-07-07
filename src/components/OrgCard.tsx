@@ -40,8 +40,17 @@ export default function OrgCard({ org, isBookmarked, onToggleBookmark, onViewDet
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-center gap-3">
             {/* Styled Logo Placeholder */}
-            <div className={`w-14 h-14 shrink-0 rounded-xl flex items-center justify-center font-black text-blue-900 border mb-4 shadow-sm text-sm tracking-tight ${org.logoBg ? org.logoBg : 'bg-blue-50 border-blue-100'}`}>
-              {org.acronym}
+            <div className={`w-14 h-14 shrink-0 rounded-xl flex items-center justify-center overflow-hidden font-black text-blue-900 border mb-4 shadow-sm text-sm tracking-tight ${org.logoBg ? org.logoBg : 'bg-blue-50 border-blue-100'}`}>
+              {org.logoImage ? (
+                <img
+                  src={org.logoImage}
+                  alt={`${org.name} logo`}
+                  className="h-full w-full object-cover"
+                  style={org.logoImageScale ? { transform: `scale(${org.logoImageScale})` } : undefined}
+                />
+              ) : (
+                org.acronym
+              )}
             </div>
             <div>
               <h3 className="font-bold text-slate-900 group-hover:text-blue-900 transition-colors text-sm md:text-base leading-snug mb-1">
